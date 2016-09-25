@@ -1,3 +1,6 @@
+<% Option Explicit %>
+<% Response.Buffer = True %>
+
 <!-- 
 Copyright 1999 Jason Abbott (jason@webott.com)
 Last updated 07/30/1999
@@ -13,26 +16,26 @@ function init() {
 	var allDIVs = document.all.tags("DIV");
 	for (i=0; i<allDIVs.length; i++) {
 		if (allDIVs(i).className == "child") {
-			allDIVs(i).style.display = "none";
+			allDIVs(i).strStyle.display = "none";
 		}
 	}
 }
 
 // cache graphics for fast display
 
-plus = new Image(); plus.src = "./images/plus_<%=style%>.gif";
-minus = new Image(); minus.src = "./images/minus_<%=style%>.gif";
-blank = new Image(); blank.src = "./images/blank_<%=style%>.gif";
+plus = new Image(); plus.src = "./images/plus_<%=strStyle%>.gif";
+minus = new Image(); minus.src = "./images/minus_<%=strStyle%>.gif";
+blank = new Image(); blank.src = "./images/blank_<%=strStyle%>.gif";
 
-// change style visibility and image
+// change strStyle visibility and image
 
 function expandIt(el) {
 	whichEl = eval(el + "_child");
-	if (whichEl.style.display == "none") {
-		whichEl.style.display = "block";
+	if (whichEl.strStyle.display == "none") {
+		whichEl.strStyle.display = "block";
 		eval("document." + el + "_img.src=minus.src");
 	} else {
-		whichEl.style.display = "none";
+		whichEl.strStyle.display = "none";
 		eval("document." + el + "_img.src=plus.src");
 	}
    window.event.cancelBubble = true;
@@ -42,7 +45,7 @@ onload = init;
 //-->
 </SCRIPT>
 </head>
-<body bgcolor="#<%=color(10)%>" text="#<%=color(7)%>" link="#<%=color(8)%>" vlink="#<%=color(8)%>" alink="#<%=color(9)%>">
+<body bgarColor="#<%=arColor(10)%>" text="#<%=arColor(7)%>" link="#<%=arColor(8)%>" vlink="#<%=arColor(8)%>" alink="#<%=arColor(9)%>">
 <font face="Arial, Helvetica" size=2>
 <div class="root">
 
@@ -71,7 +74,7 @@ for x = 0 to UBound(menuItem,1)
 		response.write "<nobr>"
 		for d = 1 to menuItem(x,7)
 			response.write "<img src='./images/blank_" _
-				& style & ".gif'>"
+				& strStyle & ".gif'>"
 		next
 %>
 <!--#include file="webNav2_item.inc"-->
@@ -83,7 +86,7 @@ for x = 0 to UBound(menuItem,1)
 			response.write "<a name='" & x & "'><a href='#" & x & "' onClick=" _
 				& """expandIt('webNav" & menuItem(x,0) & "'); return true;"">" _
 				& "<img name='webNav" & menuItem(x,0) & "_img' src='./images/plus_" _
-				& style & ".gif' border=0></a></a>" & VbCrLf _
+				& strStyle & ".gif' border=0></a></a>" & VbCrLf _
 				& item & VbCrLf & "<br>" & VbCrLf & "<div id='webNav" _
 				& menuItem(x,0) & "_child' class='child'>" & VbCrLf
 				
@@ -93,7 +96,7 @@ for x = 0 to UBound(menuItem,1)
 			divList = divList & "(" & x + menuItem(x,8) & ") "
 		else
 			response.write "<img src='./images/blank_" _
-				& style & ".gif'>" & VbCrLf & item & "<br>" & VbCrLf
+				& strStyle & ".gif'>" & VbCrLf & item & "<br>" & VbCrLf
 		end if
 	else
 	
@@ -111,5 +114,19 @@ for x = 0 to UBound(menuItem,1)
 next
 %>
 </div>
+<p>
+<font face="Tahoma, Arial, Helvetica" size=2>
+<b>
+<img src="./images/blank_<%=strStyle%>.gif">
+<a href="/jason/webNav.html" target="_top"
+<%=ShowStatus("Return to webNav home")%>>Home</a><br>
+<img src="./images/blank_<%=strStyle%>.gif">
+<a href="webNav2_admin.asp" target="body"
+<%=ShowStatus("Edit the menu")%>>Admin</a><br>
+<img src="./images/blank_<%=strStyle%>.gif">
+<a href="webNav2.asp"
+<%=ShowStatus("Switch to non-JavaScript version")%>>Legacy</a>
+</b>
+</font>
 </body>
 </html>

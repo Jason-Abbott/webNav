@@ -1,5 +1,5 @@
 <%
-' Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
+' Copyright 1999 Jason Abbott (jason@webott.com)
 ' Last updated 06/24/1999
 
 ' if the cancel button was hit then return the user
@@ -43,7 +43,7 @@ Set db = nothing
 ' we need to force regeneration of the menu
 ' so set the Session array to nothing
 
-Session(dataName & "Menu") = ""
+Session(unique & "Menu") = ""
 
 ' now send the user back to the administration page
 

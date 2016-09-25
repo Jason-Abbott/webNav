@@ -1,6 +1,6 @@
 <!--#include file="data/webNav2_array.inc"-->
 <%
-' Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
+' Copyright 1999 Jason Abbott (jason@webott.com)
 ' Last updated 06/24/1999
 
 ' 0 id
@@ -31,16 +31,16 @@ end if
 <% if Request.Form("delete") = "Delete" then %>
 
 </head>
-<body bgcolor="#<%=color(1)%>" link="#<%=color(7)%>" vlink="#<%=color(7)%>" alink="#<%=color(6)%>">
+<body bgarColor="#<%=arColor(1)%>" link="#<%=arColor(7)%>" vlink="#<%=arColor(7)%>" alink="#<%=arColor(6)%>">
 <center>
 
 <!-- framing table -->
-<table bgcolor="#<%=color(5)%>" width="60%" border=0 cellpadding=2 cellspacing=0><tr><td>
+<table bgarColor="#<%=arColor(5)%>" width="60%" border=0 cellpadding=2 cellspacing=0><tr><td>
 <!-- end framing table -->
 
-<table bgcolor="#<%=color(11)%>" border=0 cellpadding=4 cellspacing=0 width="100%">
+<table bgarColor="#<%=arColor(11)%>" border=0 cellpadding=4 cellspacing=0 width="100%">
 <form action="webNav2_deleted.asp" method="post">
-<tr bgcolor="#<%=color(3)%>" valign="bottom">
+<tr bgarColor="#<%=arColor(3)%>" valign="bottom">
 	<td><font face="Tahoma, Arial, Helvetica" size=4>
 	<b>Item Deletion</b></font></td>
 <tr>
@@ -51,13 +51,13 @@ end if
 <% end if %>
 	?</font></td>
 <tr>
-	<td align="center" bgcolor="#<%=color(12)%>">
+	<td align="center" bgarColor="#<%=arColor(12)%>">
 		<input type="submit" name="delete" value="Yes">
 		<input type="submit" name="cancel" value="No">
 	</td>
 <tr>
 	<td align="center"><font face="Tahoma, Arial, Helvetica" size=2>
-	<b><font color="#cc0000">Caution</font>: erased items cannot be restored</b></font>
+	<b><font arColor="#cc0000">Caution</font>: erased items cannot be restored</b></font>
 	</td>
 </table>
 
@@ -130,48 +130,48 @@ function Validate() {
 //-->
 </SCRIPT>
 </head>
-<body bgcolor="#<%=color(1)%>" link="#<%=color(7)%>" vlink="#<%=color(7)%>" alink="#<%=color(6)%>">
+<body bgarColor="#<%=arColor(1)%>" link="#<%=arColor(7)%>" vlink="#<%=arColor(7)%>" alink="#<%=arColor(6)%>">
 <center>
 
 <!-- framing table -->
-<table bgcolor="#<%=color(5)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
+<table bgarColor="#<%=arColor(5)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
 <!-- end framing table -->
 
 <table border=0 cellpadding=4 cellspacing=0>
 <form name="editform" method="post" action="webNav2_updated.asp">
 <tr>
-	<td bgcolor="#<%=color(3)%>" colspan=2>
+	<td bgarColor="#<%=arColor(3)%>" colspan=2>
 	<font face="Tahoma, Arial, Helvetica" size=4>
 	<b>Menu Item Details</b></font></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>Name:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<input name="item_name" type="text" size="10" max="20" value="<%=itemName%>"></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>Description:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<input name="item_description" type="text" size="20" max="50" value="<%=itemDescription%>"></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>URL:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<input name="item_url" type="text" size="20" max="200" value="<%=itemURL%>"></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>Target:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<input name="item_target" type="text" size="20" max="20" value="<%=itemTarget%>"></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>Parent:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<select name="item_parent">
 <option value=0>[root]
 <%
@@ -212,13 +212,13 @@ function Validate() {
 %>
 	</select></td>
 <tr>
-	<td align="right" bgcolor="#<%=color(12)%>">
-	<font face="Tahoma, Arial, Helvetica" size=2 color=<%=color(14)%>>
+	<td align="right" bgarColor="#<%=arColor(12)%>">
+	<font face="Tahoma, Arial, Helvetica" size=2 arColor=<%=arColor(14)%>>
 	<b>Hidden:</b></font></td>
-	<td bgcolor="#<%=color(11)%>">
+	<td bgarColor="#<%=arColor(11)%>">
 	<input name="item_hide" type="checkbox"<%=itemHidden%>></td>
 <tr>
-	<td colspan=2 bgcolor="#<%=color(12)%>" align="center"><nobr>
+	<td colspan=2 bgarColor="#<%=arColor(12)%>" align="center"><nobr>
 	<input type="submit" name="save" value="Save" onClick="return Validate();">
 	<input type="submit" name="saveadd" value="Save & Add Another" onClick="return Validate();">
 	<input type="submit" name="cancel" value="Cancel"></nobr>
@@ -236,22 +236,22 @@ function Validate() {
 <tr>
 	<td colspan=2><font face="Verdana, Arial, Helvetica" size=2>
 	<dl>
-	<dt><font color="#<%=color(6)%>"><b>Name</font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>Name</font>
 	<dd>Required</b>.  The name that appears in the menu.
 	<p>
-	<dt><font color="#<%=color(6)%>"><b>Description</font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>Description</font>
 	<dd>Optional</b>.  The text that appears in the status bar when the mouse is moved over the item in the menu.
 	<p>
-	<dt><font color="#<%=color(6)%>"><b>URL</font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>URL</font>
 	<dd>Optional</b>.  The relative path to a page on the local server or a full URL (http://...) to a page on another server.  If you leave this blank the item's only practical use is as a menu category.  Note that a single item can be a category <b>and</b> a link to content, so you are not required to leave this blank if you intend the item to be a category.
 	<p>
-	<dt><font color="#<%=color(6)%>"><b>Target</font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>Target</font>
 	<dd>Optional</b>.  The frame in which to display the specified URL.  If you leave this blank then it will be displayed in the "_top" frame, that is, the full browser window.
 	<p>
-	<dt><font color="#<%=color(6)%>"><b>Parent</b></font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>Parent</b></font>
 	<dd>The menu item under which this one should be listed.  Any existing menu item can be selected.
 	<p>
-	<dt><font color="#<%=color(6)%>"><b>Hidden</b></font>
+	<dt><font arColor="#<%=arColor(6)%>"><b>Hidden</b></font>
 	<dd>Select this if you want to disable this menu item along with any items it contains.  Hidden items are shown in (parantheses) in administration screens.
 	<p>
 	</dl>

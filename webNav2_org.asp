@@ -1,5 +1,5 @@
 <!-- 
-Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
+Copyright 1999 Jason Abbott (jason@webott.com)
 Last updated 06/24/1999
 -->
 
@@ -58,16 +58,16 @@ function Validate() {
 </SCRIPT>
 <!--#include file="webNav2_themes.inc"-->
 </head>
-<body bgcolor="#<%=color(1)%>" link="#<%=color(7)%>" vlink="#<%=color(7)%>" alink="#<%=color(6)%>">
+<body bgarColor="#<%=arColor(1)%>" link="#<%=arColor(7)%>" vlink="#<%=arColor(7)%>" alink="#<%=arColor(6)%>">
 <center>
 
 <!-- framing table -->
-<table bgcolor="#<%=color(6)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
+<table bgarColor="#<%=arColor(6)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
 <!-- end framing table -->
 
-<table bgcolor="#<%=color(11)%>" border=0 cellpadding=3 cellspacing=0>
+<table bgarColor="#<%=arColor(11)%>" border=0 cellpadding=3 cellspacing=0>
 <form name="orgForm" action="webNav2_updated.asp" method="post">
-<tr bgcolor="#<%=color(3)%>" valign="bottom">
+<tr bgarColor="#<%=arColor(3)%>" valign="bottom">
 	<td colspan=2><font face="Tahoma, Arial, Helvetica" size=4>
 	<b>Menu Organization</b></font></td>
 <tr>
@@ -137,7 +137,7 @@ next
 	<input type="button" value="down" onClick="Move(1);">
 	</td>
 <tr>
-	<td colspan=2 align="center" bgcolor="#<%=color(12)%>">
+	<td colspan=2 align="center" bgarColor="#<%=arColor(12)%>">
 	<input type="submit" name="save" value="Save" onClick="return Validate();">
 	<input type="submit" name="cancel" value="Cancel">
 	</td>

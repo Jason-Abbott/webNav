@@ -2,7 +2,7 @@
 <!--#include file="webNav2_verify.inc"-->
 
 <!-- 
-Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
+Copyright 1999 Jason Abbott (jason@webott.com)
 Last updated 05/28/1999
 -->
 
@@ -23,52 +23,52 @@ function Validate() {
 </SCRIPT>
 <!--#include file="webNav2_themes.inc"-->
 </head>
-<body bgcolor="#<%=color(1)%>" link="#<%=color(7)%>" vlink="#<%=color(7)%>" alink="#<%=color(6)%>">
+<body bgarColor="#<%=arColor(1)%>" link="#<%=arColor(7)%>" vlink="#<%=arColor(7)%>" alink="#<%=arColor(6)%>">
 
 <center>
 
 <!-- framing table -->
-<table bgcolor="#<%=color(5)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
+<table bgarColor="#<%=arColor(5)%>" border=0 cellpadding=2 cellspacing=0><tr><td>
 <!-- end framing table -->
 
-<table bgcolor="#<%=color(11)%>" border=0 cellpadding=3 cellspacing=0>
+<table bgarColor="#<%=arColor(11)%>" border=0 cellpadding=3 cellspacing=0>
 <form name="adminform" action="webNav2_edit.asp" method="post">
 <tr>
-	<td bgcolor="#<%=color(3)%>" colspan=2>
+	<td bgarColor="#<%=arColor(3)%>" colspan=2>
 	<font face="Tahoma, Arial, Helvetica" size=4>
 	<b>Menu Administration</b></font></td>
 <tr>
-	<td align="right" valign="top" bgcolor="#<%=color(12)%>">
+	<td align="right" valign="top" bgarColor="#<%=arColor(12)%>">
 <input type="submit" name="add" value="Add">
 	</td>
 	<td><font face="Verdana, Arial, Helvetica" size=2>
 	a new item under the one selected</font></td>
 <tr>
-	<td align="right" valign="top" bgcolor="#<%=color(12)%>">
+	<td align="right" valign="top" bgarColor="#<%=arColor(12)%>">
 <input type="submit" name="edit" value="Edit" onClick="return Validate();">
 	</td>
 	<td><font face="Verdana, Arial, Helvetica" size=2>
 	the selected item</font></td>
 <tr>
-	<td align="right" valign="top" bgcolor="#<%=color(12)%>">
+	<td align="right" valign="top" bgarColor="#<%=arColor(12)%>">
 <input type="submit" name="delete" value="Delete" onClick="return Validate();">
 	</td>
 	<td><font face="Verdana, Arial, Helvetica" size=2>
 	the selected item</font></td>
 <tr>
-	<td align="right" valign="top" bgcolor="#<%=color(12)%>">
+	<td align="right" valign="top" bgarColor="#<%=arColor(12)%>">
 <input type="submit" name="organize" value="Organize">
 	</td>
 	<td><font face="Verdana, Arial, Helvetica" size=2>
 	the selected category</font></td>
 <tr>
-	<td bgcolor="#<%=color(12)%>" align="right">
+	<td bgarColor="#<%=arColor(12)%>" align="right">
 	<font face="Verdana, Arial, Helvetica" size=2>
 	select</font></td>
-	<td bgcolor="#<%=color(12)%>">
+	<td bgarColor="#<%=arColor(12)%>">
 <select name="index">
 
-<% Session(dataName & "Menu") = "" %>
+<% Session(unique & "Menu") = "" %>
 <option value="-1">[root]
 <%
 ' 0 id

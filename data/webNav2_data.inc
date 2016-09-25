@@ -1,23 +1,37 @@
 <%
-' Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
-' Last updated 05/27/1999
+' Copyright 2000 Jason Abbott (jason@webott.com)
+' Last updated 4/7/2000
 
-' To prevent conflicting Session variables with multiple
-' copies of this program, specify a unique data name for
-' this copy:
+dim strDSN		' data source name for db connection
+dim unique		' unique identifier for this copy of webNav
 
-dataName = "webNav"
+unique = "webNav"
+strDSN = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" _
+	& Server.Mappath("data/" & unique & ".mdb")
 
-' This opens the database webNav.mdb stored in the
-' the directory /data under the main webNav files
+' ADO Constants-----------------------------------------------------------
+	
+' cursors
+Const adOpenForwardOnly = 0
+Const adOpenKeyset = 1
+Const adOpenDynamic = 2
+Const adOpenStatic = 3
 
-dim db
-Set db = Server.CreateObject("ADODB.Connection")
-DSN = "DRIVER={Microsoft Access Driver (*.mdb)}; " _
-	& "DBQ=" & Server.Mappath("data/" & dataName & ".mdb")
-db.Open DSN
+' cursor location
+Const adUseServer = 2
+Const adUseClient = 3
 
-' make sure the containing file does
-' db.Close
-' Set db = nothing
+' locks
+Const adLockReadOnly = 1
+Const adLockPessimistic = 2
+Const adLockOptimistic = 3
+Const adLockBatchOptimistic = 4
+
+' commands
+Const adCmdUnknown = &H0008
+Const adCmdText = &H0001
+Const adCmdTable = &H0002
+Const adCmdStoredProc = &H0004
+Const adCmdFile = &H0100
+Const adCmdTableDirect = &H0200
 %>

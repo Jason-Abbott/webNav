@@ -1,6 +1,6 @@
 <!--#include file="data/webNav2_data.inc"-->
 <%
-' Copyright 1999 Jason Abbott (jabbott@uidaho.edu)
+' Copyright 1999 Jason Abbott (jason@webott.com)
 ' updated 06/24/1999
 
 ' if cancel is hit then send back to admin page
@@ -25,18 +25,15 @@ if Request.Form("list") <> "" then
 	next
 	db.Close
 	Set db = nothing
-	Session(dataName & "Menu") = ""
+	Session(unique & "Menu") = ""
 	response.redirect "webNav2_admin.asp"
 else
 
 ' otherwise update the database with the form
 ' information
 
-	dim itemHidden, strDescription, strName
-	
-	strDescription = Replace(Request.Form("item_description"), "'", "''")
-	strName = Replace(Request.Form("item_name"), "'", "''")
-	
+	dim itemHidden
+
 	if Request.Form("item_hide") = "on" then
 		itemHidden = True
 	else
@@ -50,9 +47,9 @@ else
 	
 		query = "UPDATE menu_items SET " _
 			& "item_name = '" _
-			& strName & "', " _
+			& Request.Form("item_name") & "', " _
 			& "item_description = '" _
-			& strDescription & "', " _
+			& Request.Form("item_description") & "', " _
 			& "item_parent = '" _
 			& Request.Form("item_parent") & "', " _
 			& "item_url = '" _
@@ -74,8 +71,8 @@ else
 			& "item_url, " _
 			& "item_target" _
 			& ") VALUES ('" _
-			& strName & "', '" _
-			& strDescription & "', '" _
+			& Request.Form("item_name") & "', '" _
+			& Request.Form("item_description") & "', '" _
 			& Request.Form("item_parent") & "', '" _
 			& Request.Form("item_url") & "', '" _
 			& Request.Form("item_target") & "')"
@@ -87,7 +84,7 @@ else
 	db.Close
 	Set db = nothing
 
-	Session(dataName & "Menu") = ""
+	Session(unique & "Menu") = ""
 
 	if Request.Form("save") = "Save" then
 		response.redirect "webNav2_admin.asp"
